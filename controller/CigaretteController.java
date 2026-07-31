@@ -30,7 +30,7 @@ public class CigaretteController {
     @GetMapping("/q{num}")
     public String showQuestion(@PathVariable int num, Model model) {
         int totalSteps = 10;
-        int progress = (num * 100) / totalSteps;
+        int progress = ((num-1) * 100) / totalSteps;
         model.addAttribute("progress", progress);
         model.addAttribute("num", num);
         return "q" + num;
